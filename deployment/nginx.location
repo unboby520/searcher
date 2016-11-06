@@ -1,0 +1,8 @@
+location  /searcher {
+    include uwsgi_params;
+    uwsgi_pass unix:/data/apps/run/uwsgi_searcher.sock;
+
+    access_log /data/logs/searcher/access.log brackets;
+    error_log /data/logs/searcher/error.log  warn;
+}
+

@@ -1,0 +1,46 @@
+version: 1
+disable_existing_loggers: no
+
+formatters:
+  simple:
+    format: '%(asctime)s [%(levelname)s][%(name)s] %(message)s'
+  basic:
+    format: '%(asctime)s [%(levelname)s] %(message)s'
+  reduced:
+    format: '%(asctime)s %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+  request:
+    class: logging.handlers.WatchedFileHandler
+    level: INFO
+    formatter: basic
+    filename: /data/logs/searcher/request.log
+  spy:
+    class: logging.handlers.WatchedFileHandler
+    level: INFO
+    formatter: reduced
+    filename: /data/logs/searcher/costtime.log
+
+loggers:
+  searcher.request:
+    level: INFO
+    handlers: [request]
+    propagate: no
+    qualname: searcher.request
+  searcher.spy:
+    level: INFO
+    handlers: [spy]
+    propagate: no
+    qualname: searcher.spy
+  sqlalchmey:
+    level: INFO
+    propagate: no
+
+root:
+  level: DEBUG
+  handlers: [console]

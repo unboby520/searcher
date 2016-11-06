@@ -1,0 +1,17 @@
+MarkupSafe
+Werkzeug
+Jinja2
+Flask==0.10.1
+PyYAML
+prometheus-client==0.0.14
+raven
+blinker
+whoosh
+redis-py-cluster
+MySQL-python
+python-consul
+qiniu
+pycurl
+ujson
+pypinyin
+jieba

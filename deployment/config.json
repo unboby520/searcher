@@ -1,0 +1,10 @@
+{
+    "debug": true,
+
+    "mysql" : {
+        "mydb": {
+                "host": "10.0.0.1",
+                "user": "python"
+        }
+    }
+}
